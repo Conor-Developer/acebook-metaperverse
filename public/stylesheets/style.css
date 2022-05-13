@@ -18,8 +18,8 @@ body{
 img{
   margin: 30px;
   position: absolute;
-  left:1px;
-  top:100px;
+  left:50px;
+  top:200px;
 }
 h2{
   font-size: 20px;
@@ -31,17 +31,16 @@ h2{
   color: #1C1E21;
   padding: 20px 0;
   position:relative;
-  left:200px;
-  top:175px;
-
+  left:50px;
+  top:260px;
 }
 .forms{
   width:400px;
-  height: 350px;
+  height: 300px;
   background-color: #ffffff;
   display: inline-block;
   position: absolute;
-  top:95px;
+  top:100px;
   right:234px;
   align-items: center;
   background-color: #fff;
@@ -49,7 +48,7 @@ h2{
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
   box-sizing: border-box;
-  margin: 40px 0 0;
+  margin: 150px 0 0;
   padding: 20px 0 28px;
   width: 396px;
 }
@@ -101,10 +100,11 @@ h2{
   line-height: 48px;
   padding: 0 16px;
   width: 332px;
-  margin-left: 16px;
+  margin-left: 131px;
   font-size: 17px;
   padding: 0px 16px;
-  width: 366px;
+  height: 40px;
+  width: 130px;
 }
 #login{
   font: 400 13.3333px Arial;
@@ -122,12 +122,12 @@ h2{
   background-color: #166fe5;
 }
 .fgt{
-  margin-top: 16px;
+  margin-top: 27px;
   text-align: center;
   
 }
 .forget{
-  margin-top: 16px;
+  margin-top: 20px;
   font-size: 12px;
   text-align: center;
   text-decoration: none;
@@ -138,14 +138,14 @@ h2{
   text-decoration: underline;
 }
 #br{
-  margin: 6px 16px;
+  margin: 15px 25px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #dadde1;
 }
 .acc{
-  padding-top: 6px;
-  margin-top: 17px;
+  padding-top: 0px;
+  margin-top: 30px;
   text-align: center;
 }
 .newacc{
@@ -153,14 +153,15 @@ h2{
   border-radius: 6px;
   font-size: 17px;
   line-height: 30px;
-  padding: 12px 16px;
+  padding: 9px 16px;
 }
-#new:hover{
+#Signup:hover{
   background-color: #36a420;
 }
 #Signup{
   color: #fff;
   background-color: #42b72a;
+  cursor: pointer;
   font-weight: bold;
   text-decoration: none;
   position: relative;
@@ -180,6 +181,7 @@ h2{
   font-weight: bolder;
   color:#000;
   margin-bottom: 450px;
+  line-height: 0px;
 }
 .create:hover{
   text-decoration: underline;
