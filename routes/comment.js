@@ -3,9 +3,10 @@ const router = express.Router();
 
 const CommentController = require("../controllers/comment");
 
-router.get("/:id", CommentController.Index);
-router.get("/:id/new", CommentController.New);
-router.post("/:id", CommentController.Create);
+router.get("/", CommentController.Index);
+router.post("/create", CommentController.Create);
+router.get("/new", CommentController.New);
+
 
 
 module.exports = router;
