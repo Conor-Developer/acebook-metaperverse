@@ -11,7 +11,6 @@ const homeRouter = require("./routes/home");
 const postsRouter = require("./routes/posts");
 const sessionsRouter = require("./routes/sessions");
 const usersRouter = require("./routes/users");
-
 const app = express();
 
 // view engine setup
@@ -80,6 +79,15 @@ app.use((err, req, res) => {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
+});
+
+// hbs helpers
+const hbs = require('hbs');
+const moment = require('moment');
+hbs.registerHelper('formatDate', function(datestamp) {
+  return new hbs.SafeString(
+    moment(datestamp).format("HH:mm") + ' on ' + moment(datestamp).format("DD MMMM YYYY")
+  )
 });
 
 module.exports = app;
