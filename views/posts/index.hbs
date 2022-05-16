@@ -11,19 +11,19 @@
   <ul class="posts">
     {{#each posts}}
       <li>{{this.message}}</li>
+      
       <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button>
       <span id="likes-count-{{this.id}}">{{this.likes}}</span>   
+      
+      {{#each comments}}
+        <p class="comments">{{this.commentMessage}}</p>
+      {{/each}}
 
-    {{#each post_comments}}
-    <li><h4 class="card-title">{{this.comment}}</h4></li>
-   {{/each}}
-    {{this.comments}}
-   
-<form action= '/comments/{{post_id}}' method='POST'>
-      <form id="new-comment-form" action="/posts" method="post"></form>  
-         Comment:<input type="text" name="comment"> 
+      <form id="new-comment-form" action= '/comments' method='post'>
+        <label for="new-comment-form">Comment:</label>
+        <input type="text" name="commentMessage"> 
         <input type="submit" value="submit">
-</form>
+      </form>
 
     {{/each}}
   </ul>

@@ -1,4 +1,5 @@
 const Post = require("../models/post");
+const CommentsController = require("./comments");
 
 const PostsController = {
   Index: (req, res) => {
@@ -8,8 +9,12 @@ const PostsController = {
         if (err) {
           throw err;
         }
-
-        res.render("posts/index", { posts: userposts });
+        console.log('CommentsController: ', CommentsController)
+        console.log('CommentsController.ReturnComments: ', CommentsController.ReturnComments)
+        console.log('CommentsController.ReturnComments(req, res): ', CommentsController.ReturnComments(req, res))
+        let usercomments = CommentsController.ReturnComments(req, res);
+        console.log('usercomments returning from CommentController.ReturnComments(): ', usercomments)
+        res.render("posts/index", { posts: userposts, comments: usercomments });
       });
   },
   New: (req, res) => {

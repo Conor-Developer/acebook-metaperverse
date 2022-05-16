@@ -28,7 +28,10 @@ describe("Comment", () => {
     // comment on a post
     cy.visit("/posts");
     cy.get("#new-comment-form").find('[type="text"]').type("message");
-    cy.get("#new-coment-form").submit();   
+    cy.get("#new-comment-form").submit();
+
+    // some HTTP requests... the same page refreshes
+    // and now the comment appears underneath the original post
     cy.get(".posts").should("contain", "message");
  
 })});
