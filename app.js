@@ -11,6 +11,7 @@ const homeRouter = require("./routes/home");
 const postsRouter = require("./routes/posts");
 const sessionsRouter = require("./routes/sessions");
 const usersRouter = require("./routes/users");
+const commentRouter = require('./routes/comment');
 const app = express();
 
 // view engine setup
@@ -64,6 +65,8 @@ app.use("/", homeRouter);
 app.use("/posts", sessionChecker, postsRouter);
 app.use("/sessions", sessionsRouter);
 app.use("/users", usersRouter);
+app.use('/comment', commentRouter);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
