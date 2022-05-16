@@ -1,7 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
-validateEmail = (email) => {
+const validateEmail = (email) => {
   return User.findOne({ email: email }).then((result) => { 
     return result !== null
   });
