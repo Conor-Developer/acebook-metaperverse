@@ -16,7 +16,6 @@ describe("Authentication", () => {
     cy.get("#password").type("password");
     cy.get("#submit").click();
     cy.url().should("include", "/posts");
-    cy.contains("a", "New post");
   });
 
 
@@ -30,7 +29,7 @@ describe("Authentication", () => {
     cy.get("#password").type("password");
     cy.get("#submit").click();
     cy.url().should("include", "/posts");
-    cy.contains("a", "New post");
+    cy.contains("Timeline");
 
 
   }); 
