@@ -4,14 +4,13 @@
     <link rel="stylesheet" href="/stylesheets/homepage_style.css" />
   </head>    
   <body>
-    {{#unless session.user}}
-    <h1 class="title">{{title}}</h1>
     <div class="general">
       <img src="https://i.imgur.com/jKmKugF.png"width="500px" alt="metaperverse"> 
       <h2>Facebook helps you connect and share <br> with the people in your life.<br> {{title}} does not.</h2>
     </div>
     <div class="forms">
       <div>
+        {{#unless session.user}}
         <form action='sessions/new' method='GET'>
           <button class="botton" id="Login" type="submit" value="Log in"<>Log In</a></button>               
         </form> 
@@ -25,8 +24,8 @@
           <button class="newacc" id="Signup" type="submit" value="Create New Account" >Create New Account</a></botton>
         </form>
       </div>
+      {{/unless}}
       <div class="newpage"><a class="create"> Create a Page</a> for a celebrity, band or business.</div>
     </div> 
-    {{/unless}}
   </body>
 </html>
