@@ -1,4 +1,4 @@
-{{#unless session.user}}
+
 
 <html>    
 <body>
@@ -9,9 +9,10 @@
     </div>
     <div class="forms">
         <div>
+            {{#unless session.user}}
             <form action='sessions/new' method='GET'>
             <button class="botton" id="Login" type="submit" value="Log in "<>Log In</a></button>               
-            </form> 
+            </form>
         </div>
         <div class="fgt">
            <a class="forget">Forgotten password?</a>
@@ -23,15 +24,8 @@
            </form>
         </div>
         </form>
+        {{/unless}}
    
         <div class="newpage"><a class="create"> Create a Page</a> for a celebrity, band or business.</div>
     </div> 
 </html>
-
-
-
-
-{{/unless}}
-
-{{!-- <h1 class="title">{{title}}</h1>
-<p>Welcome to {{title}}</p> --}}
