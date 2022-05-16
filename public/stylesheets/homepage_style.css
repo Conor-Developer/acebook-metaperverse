@@ -153,7 +153,3 @@ h2 {
 .create:hover {
   text-decoration: underline;
 }
-
-.post-message {
-  white-space: pre-wrap;
-}
