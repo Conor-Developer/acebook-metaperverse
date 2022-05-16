@@ -14,7 +14,7 @@ img{
 body{
   background: #F0F2F5;
   font-family: Arial;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 /* Form box */
@@ -42,27 +42,26 @@ input{
   padding: 5px;
 }
 
-/* Log into Acebook */
+/* Sign up to Acebook */
 h2{
   margin: 10px;
   padding: 5px;
   font-size: 20px;
 }
 
-/* Login checkbox */
-input.checkbox-style{
-  display: inline;
-  width:20px;
-  color: #1877f2;
+/* Username form box */
+#username{
+  border-width: 1px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border-color: rgb(221,223,226);
 }
-
-/*Forgot password properties */
-a,a:hover,a:visited,a:active{
-  color: #1877f2; 
-  text-decoration: none;
+#username:hover{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  border-color:#1877f2;
 }
-a:hover{
-  text-decoration: underline;
+#username:focus{
+  border-style: none;
 }
 
 /* Email form box */
@@ -100,7 +99,7 @@ a:hover{
 
 /* Submit button properties */
 #submit{
-  background-color: #1877f2;
+  background-color: #42b72a;
   border: none;
   border-radius: 6px;
   font-size: 17px;
@@ -117,5 +116,5 @@ a:hover{
   color: white;
 }
 #submit:hover{
-  background-color: #166fe5;
+  background-color: #36a420;
 }
