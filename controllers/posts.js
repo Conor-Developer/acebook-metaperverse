@@ -9,11 +9,11 @@ const PostsController = {
         if (err) {
           throw err;
         }
-        console.log('CommentsController: ', CommentsController)
-        console.log('CommentsController.ReturnComments: ', CommentsController.ReturnComments)
-        console.log('CommentsController.ReturnComments(req, res): ', CommentsController.ReturnComments(req, res))
+        // console.log('CommentsController: ', CommentsController)
+        // console.log('CommentsController.ReturnComments: ', CommentsController.ReturnComments)
+        // console.log('CommentsController.ReturnComments(req, res): ', CommentsController.ReturnComments(req, res))
         let usercomments = CommentsController.ReturnComments(req, res);
-        console.log('usercomments returning from CommentController.ReturnComments(): ', usercomments)
+        // console.log('usercomments returning from CommentController.ReturnComments(): ', usercomments)
         res.render("posts/index", { posts: userposts, comments: usercomments });
       });
   },

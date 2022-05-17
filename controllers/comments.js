@@ -20,8 +20,9 @@ const CommentController = {
     // New: (req,res) => {
     //   res.render("comment/new", {post_id: req.params.id});
     // },
-
+    
     Create: (req,res) => {
+      console.log(req.body)
       // later, think about how to link a new comment with the post it is a comment on
       const comment = new Comment(req.body);
       comment.save((err) => {
