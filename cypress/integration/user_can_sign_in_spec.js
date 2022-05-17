@@ -16,7 +16,6 @@ describe("Authentication", () => {
     cy.get("#password").type("password");
     cy.get("#submit").click();
     cy.url().should("include", "/posts");
-    cy.contains("a", "New post");
   });
 
 
@@ -30,9 +29,27 @@ describe("Authentication", () => {
     cy.get("#password").type("password");
     cy.get("#submit").click();
     cy.url().should("include", "/posts");
-    cy.contains("a", "New post");
+    cy.contains("Timeline");
 
 
   }); 
+  it("A user cannot sign up with duplicate email", () => {
+   // sign up
+   cy.visit("/");
+   cy.get("#Signup").click();
+   cy.url().should("include", "/users/new");
+   cy.get("#username").type("someone34");
+   cy.get("#email").type("someone34@example.com");
+   cy.get("#password").type("password");
+   cy.get("#submit").click();
 
+   cy.visit("/");
+   cy.get("#Signup").click();
+   cy.url().should("include", "/users/new");
+   cy.get("#username").type("someone34");
+   cy.get("#email").type("someone34@example.com");
+   cy.get("#password").type("password");
+   cy.get("#submit").click();
+   cy.contains("Email/Username in use")
+})
 });

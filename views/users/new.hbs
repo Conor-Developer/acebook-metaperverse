@@ -1,13 +1,22 @@
-<form action="/" method="GET">
-  <input type="submit" value="Home" />
-</form>
-
-<form id="new-user-form" action="/users" method="post">
-  <label for="username">Username: </label>
-  <input id="username" type="text" name="username" value="" />
-  <label for="email">Email: </label>
-  <input id="email" type="email" name="email" value="" />
-  <label for="password">Password: </label>
-  <input id="password" type="password" name="password" value="" />
-  <input id="submit" type="submit" value="Submit" />
-</form>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/signup_style.css" />
+  </head>    
+  <body>
+    <section>
+      <div class="center">
+        <h2>Sign up to Acebook</h2>
+        <form id="new-user-form" action="/users" method="post">
+          <input id="username" type="text" name="username" placeholder="Username" value="" />
+          <input id="email" type="email" name="email" placeholder="Email" value="" />
+          <input id="password" type="password" name="password" placeholder="Password" value="" />
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+        <div id="error">
+          {{this.error}}
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

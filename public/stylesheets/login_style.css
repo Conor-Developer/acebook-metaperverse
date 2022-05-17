@@ -1,0 +1,121 @@
+/* Overall margins */
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Image position */
+img{
+  left:50px;
+  top:12px;
+}
+
+/* Background & main font */
+body{
+  background: #F0F2F5;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+/* Form box */
+section{
+  padding: 150px;
+}
+section .center{
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 80px auto;
+  font-size: 11px;
+}
+input{
+  display: block;
+  width: 200px;
+  margin: 15px auto;
+  padding: 5px;
+}
+
+/* Log into Acebook */
+h2{
+  margin: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+/* Login checkbox */
+input.checkbox-style{
+  display: inline;
+  width:20px;
+  color: #1877f2;
+}
+
+/*Forgot password properties */
+a,a:hover,a:visited,a:active{
+  color: #1877f2; 
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+/* Email form box */
+#email{
+  border-width: 1px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border-color: rgb(221,223,226);
+}
+#email:hover{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  border-color:#1877f2;
+}
+#email:focus{
+  border-style: none;
+}
+
+/* Password form box */
+.password{
+  padding: 0px 16px;
+}
+#password{
+  border-width: 1px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border-color: rgb(221,223,226);
+}
+#password:hover{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  border-color:#1877f2;
+}
+#password:focus{
+  border-style: none;
+}
+
+/* Submit button properties */
+#submit{
+  background-color: #1877f2;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  height: 40px;
+  width: 130px;
+  font: 400 13.3333px Arial;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Helvetica, Arial,sans-serif;
+  font-weight: bolder;
+  color: white;
+}
+#submit:hover{
+  background-color: #166fe5;
+}

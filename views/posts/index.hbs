@@ -1,17 +1,36 @@
-
 <HTML>
-  <script type="text/javascript" src="./javascripts/likesView.js" defer></script>
-  <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+  <script
+    type="text/javascript"
+    src="./javascripts/likesView.js"
+    defer
+  ></script>
+  <link rel="stylesheet" href="/stylesheets/posts_style.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <form action="/" method="GET">
     <input type="submit" value="Home" />
   </form>
 
   <h1>Timeline</h1>
 
+  <form id="new-post-form" action="/posts" method="post">
+  {{!-- <label for="message">Message: </label> --}}
+  <textarea
+    id="message"
+    name="message"
+    value=""
+    rows="2"
+    type="text"
+    placeholder="Type your post here..."
+  ></textarea><br>
+  <input type="submit" value="Submit" />
+</form>
+
   <ul class="posts">
     {{#each posts}}
-      <li>{{this.message}}</li>
-      
+      <li>
+      <p class="post-message">{{this.message}}</p>
+      <div id="datestamp">Created at {{formatDate this.createdAt}}</div>
       <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button>
       <span id="likes-count-{{this.id}}">{{this.likes}}</span>   
       
@@ -24,14 +43,13 @@
         <input type="text" name="commentMessage"> 
         <input type="submit" value="submit">
       </form>
+      </li>
 
     {{/each}}
   </ul>
 
-  <a class="new-post-link" href="/posts/new">New post</a>
-
-   <form action="/sessions?_method=DELETE" method="POST">
-      <input id="logout" value="Log Out" />
+  <form action="/sessions?_method=DELETE" method="POST">
+    <input type="submit" id="logout" value="Log Out" />
   </form>
 
 

@@ -17,9 +17,6 @@ const PostsController = {
         res.render("posts/index", { posts: userposts, comments: usercomments });
       });
   },
-  New: (req, res) => {
-    res.render("posts/new", {});
-  },
   Create: (req, res) => {
     const post = new Post(req.body);
     post.save((err) => {
@@ -31,10 +28,8 @@ const PostsController = {
     });
   },
   UpdateLikes: (req, res) => {
-    console.log("Update likes in controller");
-    console.log(req.params.id);
     const action = req.body.action;
-    const counter = (action === "Like" ? 1 : -1);
+    const counter = action === "Like" ? 1 : -1;
     Post.updateOne(
       { _id: req.params.id },
       { $inc: { likes: counter } },
