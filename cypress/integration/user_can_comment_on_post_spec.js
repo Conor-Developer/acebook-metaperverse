@@ -17,14 +17,13 @@ describe("Comment", () => {
 
     // submit a post
     cy.visit("/posts");
-    cy.contains("New post").click();
 
     cy.get("#new-post-form").find('[type="text"]').type("Hello, world!");
     cy.get("#new-post-form").submit();
     cy.get("#like-button").click();
 
     cy.get(".posts").should("contain", 1);
-  
+
     // comment on a post
     cy.visit("/posts");
     cy.get("#new-comment-form").find('[type="text"]').type("message");
@@ -33,5 +32,5 @@ describe("Comment", () => {
     // some HTTP requests... the same page refreshes
     // and now the comment appears underneath the original post
     cy.get(".posts").should("contain", "message");
- 
-})});
+  });
+});
