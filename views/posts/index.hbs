@@ -14,7 +14,6 @@
   <h1>Timeline</h1>
 
   <form id="new-post-form" action="/posts" method="post">
-  {{!-- <label for="message">Message: </label> --}}
   <textarea
     id="message"
     name="message"
@@ -31,13 +30,20 @@
     <p>{{this.user.username}}</p>
       <p class="post-message">{{this.message}}</p>
       <div id="datestamp">Created at {{formatDate this.createdAt}}</div>
-      <button
-        id="like-button"
-        class="{{this.id}}"
-        type="submit"
-        value="Like"
-      >Like</button>
-      <span id="likes-count-{{this.id}}">{{this.likes}}</span>
+      <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button>
+      <span id="likes-count-{{this.id}}">{{this.likes}}</span>   
+
+    {{#each this.comments}}
+    <p>{{this}}</p>
+     {{/each}}
+
+      <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
+        <label for="new-comment-form">Comment:</label>
+        <input type="text" name="commentText"> 
+        <input type="submit" value="submit">
+      </form>
+      </li>
+
     {{/each}}
   </ul>
 
@@ -45,4 +51,6 @@
     <input type="submit" id="logout" value="Log Out" />
   </form>
 
-</HTML>
+
+
+
