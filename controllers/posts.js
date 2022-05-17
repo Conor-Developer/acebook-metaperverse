@@ -19,7 +19,7 @@ const PostsController = {
         res.render("posts/index", {
           posts: userposts,
           user: req.session.user,
-          comments: usercomments
+          // comments: usercomments
         });
       });
   },

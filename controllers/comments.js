@@ -1,5 +1,5 @@
 const Comment = require("../models/comment");
-// const Post = require("../models/posts");
+const Post = require("../models/post");
 
 const CommentController = {
   ReturnComments: () => {
@@ -30,13 +30,31 @@ const CommentController = {
 
         return postComments
       });
-    }
+    },
     
     Create: (req,res) => {
       const Info = {
         commentMessage: req.body.commentMessage,
         postId: req.params.id
       }
+
+      Post.findById(req.params.id, function (err, docs) {
+        if (err) {
+          console.log(err);
+        }
+        else{
+          docs.comments.push(req.body.commentMessage)
+          console.log("docs.comments : ", docs.comments);
+          Post.updateOne(
+            { id: req.params.id},
+            { $set: { comments: docs.comments } }
+          );
+        }
+      });
+
+
+      // now we need to save the updated post back into the database
+
       // console.log(req.body)
       // console.log(req.params)
       // later, think about how to link a new comment with the post it is a comment on
