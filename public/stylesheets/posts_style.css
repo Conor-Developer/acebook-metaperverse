@@ -85,7 +85,8 @@ body {
 }
 
 .fb-p-card-content img {
-  width: 100%;
+  width: 80%;
+  left: 20px;
 }
 
 .fb-p-card-actions > * {
@@ -207,24 +208,27 @@ body {
 }
 .contentContainer{
   top: 0;
-  left: 0;
-  position: absolute;
+  left: 20;
+ 
   width: 100%; height: 0%;
-  padding-top: 3%;
-  padding-bottom: 0%;
+  padding-top: 10%;
 }
 .boxContainer{
-  width: 410px;
+  width: 500px;
   height: 140px;
   margin: 0 auto;
   text-align: right;
   padding-top: 40px;
   background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  color: rgb(28, 30, 33);
 }
 div.lineSplit{
-  width:371px;
+  width:320px;
   height: 1px;
-  margin-left: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
   background: #dcdee3;
 }
 div.lineSplit:after {
@@ -257,8 +261,8 @@ div.lineSplit:before {
   resize: none;
   border: none;
   font-size: 14px;
-  padding-top: 30px;
-  padding-left: 55px;
+  padding-top: 5px;
+  padding-left: 85px;
   padding-right: 30px;
   border-bottom: 1px solid #dcdee3;
 }
@@ -276,7 +280,7 @@ div.lineSplit:before {
   font-size: 13px;
   font-weight: 500;
   border-radius: 3px;
-  margin: 10px 10px 0 0;
+  margin: -4px 30px 0 0;
   background-color: #4e69a2;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
@@ -292,3 +296,204 @@ div.lineSplit:before {
   border-color: #2f477a #314a7f #334c83; 
   box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
 }
+body {
+  margin: 0px;
+  background-color:#e9ebee;
+  font-family: arial;
+}
+
+.header {
+  background-color: #3b5998;
+  padding: 7px 0px 3px 13%;
+}
+
+.header *{
+  display:inline-block;
+}
+
+p {
+  margin: 0px;
+}
+
+.search {
+  background-color: white;
+  width: 450px;
+  height: 24px;
+  position: relative;
+  top: -4px;
+  border-raduis: 5px;
+}
+
+.logo {
+  background-image: url('');
+      background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 -223px;
+    height: 24px;
+    outline: none;
+    overflow: hidden;
+    text-indent: -999px;
+    white-space: nowrap;
+    width: 24px;
+  position: relative;
+  top: 3px;
+}
+
+#inputText {
+      width: 300px;
+  border-raduis: 5px;
+    height: 22px;
+    position: relative;
+    top: 0px;
+  padding-left: 5px;
+  font-size: 14px;
+  border: 0px;
+}
+
+.search-icon {
+  background-color: #f6f7f9;
+  height: 100%;
+  width: 50px;
+  text-align: center;
+  float: right;
+}
+.search-icon img {
+  height: 15px;
+  width:15px;
+  margin: 10% 0;
+}
+
+.right-side {
+  position: relative;
+  left: 15%;
+}
+
+.leftofright {
+  position: relative;
+  top: -2px;
+}
+
+.leftofright p {
+  color: white;
+  font-size: 12px;
+  position: relative;
+  top: -3px;
+  font-weight: 700;
+}
+
+.leftofright  p:nth-child(3){
+  color: black;
+  opacity: 0.3;
+}
+
+.leftofright img {
+  position: relative;
+  top: 5px;
+}
+
+.right-icon, .fr {
+  height: 25px;
+  width: 25px;
+  background-image: url(https://web.facebook.com/rsrc.php/v2/yL/r/cnjWBJCYDcu.png);
+  background-position: 0 -248px;
+  opacity: 0.7;
+}
+
+.messages {
+  background-position: 0 -398px;
+}
+
+.notification {
+  background-position:0 -348px;
+}
+
+.rightofright {
+  position: relative;
+  top: 3px;
+  left: 10%;
+}
+
+
+.privacy {
+  background-position:0px -613px;
+  width: 17px;
+}
+
+.rightofright p {
+  position: relative;
+  top: -8px;
+  opacity: 0.3;
+  margin: 0 8px;
+}
+
+.down {
+  background-position: 0px -600px;
+  width: 15px;
+  height: 13px;
+  position: relative;
+  top: -8px;
+}
+
+.small-screen {
+  opacity: 0;
+}
+.btn {
+  text-decoration: none;
+  color: #fff;
+  padding: .5vh 1vh;
+}
+.btn:hover {
+  background: rgb(46,72,144);
+  padding: .5vh 1vh;
+  border-radius: 1.5px;
+}
+.fa-search {
+  color: #444;
+}
+input:focus {
+  outline: none;
+}
+.fa-btn {
+  padding: .125vh 1.2vh;
+  margin-left: -1vh;
+  background: #eee;
+}
+.fa-btn:hover {
+  padding: .125vh 1.2vh;
+  background: #ddd;
+}
+.acebook {
+  display: flex;
+  width: 100%;
+  margin-left: -1.5vh;
+}
+
+.acebook__search {
+  margin-right: auto;
+}
+.acebook {
+  border: 1px solid red;
+  height: 46px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-radius: 5px;
+  background: rgba(59, 89, 153, 1);
+  color: #fff;
+  font-size: 0.9em;
+  box-shadow: 5px 10px 20px -20px rgba(59, 89, 153, 1);
+}
+
+.acebook__brand i {
+  font-size: 1.5em;
+}
+.acebook li:not(:last-child):not(:first-child):not(.acebook__search) {
+  margin-right: 10px;
+}
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  
+}
+

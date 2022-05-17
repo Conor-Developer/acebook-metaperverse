@@ -10,24 +10,82 @@
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
-<body>
-  <form action="/" method="GET">
-    <input type="submit" value="Home" />
-  </form>
-    <form action="/sessions?_method=DELETE" method="POST">
-    <input type="submit" id="logout" value="Log Out" />
-  </form>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+  <ul class="acebook" role="navigation">
+    <li class="acebook__brand">
+      <a class="btn" href="#">
+        <i class="fa fa-acebook-official"></i>
+      </a>
+    </li>  
+    <li class="acebook__search"><form>
+      <input placeholder="Search the Metaperverse"/>
+      <a class="btn fa-btn" href="#">
+        <i class="fa fa-search"></i>
+      </a>
+      </form>
+    </li>
+    <li>
+      <a class="btn" href="#"><i class="fa fa-user-circle-o"></i>{{this.user.username}}</a></li>
+    <li>
+      <a class="btn" href="/">Home</a></li>
+  <li>
+      <a class="btn" href="/">Log Out</a></li>
+  </ul>
+
+
+  {{!-- <body>
+    <div class="header">
+      <a href="#"><div class="logo"></div></a>
+      <div class="search">
+        <input type="text" id="inputText" placeholder="Search Metaperverse">
+        <div class="search-icon">
+        <img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Search-icon.png" ></img>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="leftofright">
+          <ul class="facebook" role="navigation">
+        <li>
+        <a class="btn" href="#"><i class="fa fa-user-circle-o"></i>{{this.user.username}}</a>
+        </li>
+        <li>
+      <a class="btn" href="/posts">Home</a>
+    </li>
+    <li>
+      <a class="btn" href="/">Log Out</a></li>
+  </ul> --}}
+{{!--       
+        </div>
+        <div class="rightofright">
+          <div class="right-icon fr"></div>
+          <div class="right-icon messages"></div>
+          <div class="right-icon notification"></div>
+          <p>|</p>
+          <div class=" right-icon privacy"></div>             <div class=" right-icon down"></div>
+        </div>  
+      </div>
+    </div>
+  </body> --}}
+    {{!-- <form action="/sessions?_method=DELETE" method="POST">
+    <input type="submit" id="logout" value="Log Out" />
+  </form> --}} 
+  <div class="center-element">
+    <div class="fb-p-card">
+    <div class="fb-p-card-header">
+      <div class="fb-p-card-header-content" style="flex-grow: 2;">
+    <div class="lineSplit"></div>
+    <div class="rounded-3c"></div>
+    <form id="new-post-form" action="/posts" method="post">
+    <div class="fb-p-card-content">
+    <textarea class="message" name="message" id="message" placeholder="What's on your mind?"></textarea>
+    <input type="submit" class="postButton" id="submitPost" value="Post"/>
+    </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
 <ul class="posts">
     {{#each posts}}
     <div class="center-element">
@@ -100,13 +158,7 @@
     <br>
       {{/each}}
   </ul>
-  <div class="contentContainer">
-  <div class="boxContainer">
-    <div class="lineSplit"></div>
-    <form id="new-post-form" action="/posts" method="post">
-    <textarea class="message" name="message" id="message" placeholder="What's on your mind?"></textarea>
-    <input type="submit" class="postButton" id="submitPost" value="Post"/>
-    </form>
-  </div>
-</div>
   </body>
+  </HTML>
+
+  
