@@ -15,6 +15,23 @@ describe("Post model", () => {
     expect(post.message).toEqual("some message");
   });
 
+  it("post pulls & shows userID", (done) => {
+    var post = new Post({ user: '628379ad7a145372ff227f25', message: "some message" });
+
+    post.save((err) => {
+      expect(err).toBeNull();
+
+      Post.find((err, posts) => {
+        expect(err).toBeNull();
+
+
+        expect(posts[0].user.toString()).toEqual( '628379ad7a145372ff227f25' );
+
+        done();
+      });
+    });
+  });
+
   it("can list all posts", (done) => {
     Post.find((err, posts) => {
       expect(err).toBeNull();
