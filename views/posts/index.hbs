@@ -77,7 +77,7 @@
     <div class="rounded-3c"></div>
     <form id="new-post-form" action="/posts" method="post">
     <div class="fb-p-card-content">
-    <textarea class="message" name="message" id="message" placeholder="What's on your mind?"></textarea>
+    <textarea class="message" name="message" id="message" placeholder="What's on your mind, {{this.user.username}}?"></textarea>
     <input type="submit" class="postButton" id="submitPost" value="Post"/>
     </div>
     </form>
