@@ -13,7 +13,8 @@ const PostsController = {
         // console.log('CommentsController: ', CommentsController)
         // console.log('CommentsController.ReturnComments: ', CommentsController.ReturnComments)
         // console.log('CommentsController.ReturnComments(req, res): ', CommentsController.ReturnComments(req, res))
-        let usercomments = CommentsController.ReturnComments(req, res);
+        // let usercomments = CommentsController.ReturnComments(req, res);
+        let usercomments = CommentsController.fetchCommentsOfPosts();
         // console.log('usercomments returning from CommentController.ReturnComments(): ', usercomments)
         res.render("posts/index", {
           posts: userposts,

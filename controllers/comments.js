@@ -20,6 +20,17 @@ const CommentController = {
     // New: (req,res) => {
     //   res.render("comment/new", {post_id: req.params.id});
     // },
+
+    fetchCommentsOfPosts: (givenPostId) => {
+      Comment.find({ postId: givenPostId})
+      .exec(function (err, postComments) {
+        if (err) {
+          throw err;
+        }
+
+        return postComments
+      });
+    }
     
     Create: (req,res) => {
       const Info = {
