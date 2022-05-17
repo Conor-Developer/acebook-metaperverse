@@ -2,7 +2,7 @@ const Comment = require("../models/comment");
 // const Post = require("../models/posts");
 
 const CommentController = {
-  ReturnComments: (req, res) => {
+  ReturnComments: () => {
     // console.log('res before Comment.find{})', res)
     Comment.find({})
     .exec(function (err, usercomments) {
