@@ -1,48 +1,112 @@
 <HTML>
-  <script
-    type="text/javascript"
-    src="./javascripts/likesView.js"
-    defer
-  ></script>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript" src="./javascripts/likesView.js" defer></script>
   <link rel="stylesheet" href="/stylesheets/posts_style.css" />
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+<body>
   <form action="/" method="GET">
     <input type="submit" value="Home" />
   </form>
-
-  <h1>Timeline</h1>
-
-  <form id="new-post-form" action="/posts" method="post">
-  {{!-- <label for="message">Message: </label> --}}
-  <textarea
-    id="message"
-    name="message"
-    value=""
-    rows="2"
-    type="text"
-    placeholder="Type your post here..."
-  ></textarea><br>
-  <input type="submit" value="Submit" />
-</form>
-
-  <ul class="posts">
-    {{#each posts}}
-    <p>{{this.user.username}}</p>
-      <p class="post-message">{{this.message}}</p>
-      <div id="datestamp">Created at {{formatDate this.createdAt}}</div>
-      <button
-        id="like-button"
-        class="{{this.id}}"
-        type="submit"
-        value="Like"
-      >Like</button>
-      <span id="likes-count-{{this.id}}">{{this.likes}}</span>
-    {{/each}}
-  </ul>
-
-  <form action="/sessions?_method=DELETE" method="POST">
+    <form action="/sessions?_method=DELETE" method="POST">
     <input type="submit" id="logout" value="Log Out" />
   </form>
 
-</HTML>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<ul class="posts">
+    {{#each posts}}
+    <div class="center-element">
+    <div class="fb-p-card">
+        <div class="fb-p-card-header">
+            <div class="fb-p-card-header-content" style="flex-grow: 2;">
+                <div> 
+                    <a class="c-black" href="#">{{this.user.username}}</a>    
+                </div>   
+                <div>Created at {{formatDate this.createdAt}}</div>
+            </div>
+            <div>
+                <div class="rounded-3c">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="fb-p-card-content">
+            <p>{{this.message}}</p>
+        </div>
+        <div class="fb-p-card-actions">
+            <div class="fb-p-card-actions-stats">
+                <div class="like-counts">
+                  <span id="likes-count-{{this.id}}">{{this.likes}}</span> Likes
+                    <span class="c-black-msg stat" style="padding-left: 10px;">3 comments</span>
+                </div>
+            </div>
+            <div class="fb-p-card-actions-action-btns">
+                <div> 
+                    <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button><div class="fb-like-ico fb-icon-bundle stat"></div>
+                </div>
+                <div>
+                    <div class="fb-comment-ico fb-icon-bundle stat"></div>
+                    <span class="stat">Comment</span>
+                </div>
+                <div>
+                    <div class="fb-share-ico fb-icon-bundle"></div>
+                    <span class="stat">Share</span>
+                </div>
+            </div>
+            <div class="fb-p-card-actions-prev-comments">
+                <a href="#" class="c-black-msg stat">View previous comments</a>
+            </div>
+            <div class="fb-p-card-actions-comments flex-start gapper">
+                <img class="rounded" src="https://scontent.fbom16-1.fna.fbcdn.net/v/t1.0-1/cp0/p32x32/136183373_230921388603403_7994896860376298304_o.jpg?_nc_cat=103&ccb=2&_nc_sid=7206a8&_nc_ohc=WfujENC1jnkAX9xPgIg&_nc_ht=scontent.fbom16-1.fna&tp=27&oh=45715b6e31422c10216f6531d147bbc4&oe=6033C4EE" alt="">
+                <div >
+                    <div class="commented">
+                        <div class="commented-name stat c-black c-black-msg">James Little</div>
+                        <div class="commented-txt c-black stat">Same here</div>                        
+                    </div>
+                    <div class="commented-action">
+                        <a href="#">Like</a> 
+                        <span> · </span> 
+                        <a href="#">Reply</a> 
+                        <span> · </span> 
+                        <a href="#">Share</a> 
+                        <span> · </span> 
+                        <a href="#">19 h</a>
+                    </div>                    
+                </div>
+            </div>
+            <div class="fb-p-card-actions-comment-action"></div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+      {{/each}}
+  </ul>
+  <div class="contentContainer">
+  <div class="boxContainer">
+    <div class="lineSplit"></div>
+    <form id="new-post-form" action="/posts" method="post">
+    <textarea class="message" name="message" id="message" placeholder="What's on your mind?"></textarea>
+    <input type="submit" class="postButton" id="submitPost" value="Post"/>
+    </form>
+  </div>
+</div>
+  </body>
