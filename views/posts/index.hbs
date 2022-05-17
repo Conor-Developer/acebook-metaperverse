@@ -28,6 +28,7 @@
 
   <ul class="posts">
     {{#each posts}}
+    <p>USER ID - {{this.user}}</p>
       <p class="post-message">{{this.message}}</p>
       <div id="datestamp">Created at {{formatDate this.createdAt}}</div>
       <button
