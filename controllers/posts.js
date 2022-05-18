@@ -26,10 +26,16 @@ const PostsController = {
     const post = new Post(Info);
     post.save((err) => {
       if (err) {
-        throw err;
+        if (err.name === "ValidationError") {
+          req.flash("message", "Invalid Message: Empty");
+          res.redirect("/posts");
+        }
+        else {
+          throw err;
+        }
+      } else {
+        res.status(201).redirect("/posts");
       }
-
-      res.status(201).redirect("/posts");
     });
   },
   UpdateLikes: (req, res) => {
