@@ -13,6 +13,7 @@ const PostsController = {
         res.render("posts/index", {
           posts: userposts,
           user: req.session.user,
+          emptymessage: req.flash("emptymessage"),
         });
       });
   },
@@ -27,7 +28,7 @@ const PostsController = {
     post.save((err) => {
       if (err) {
         if (err.name === "ValidationError") {
-          req.flash("message", "Invalid Message: Empty");
+          req.flash("emptymessage", "Invalid Message: Empty");
           res.redirect("/posts");
         }
         else {

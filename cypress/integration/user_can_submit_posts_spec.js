@@ -22,6 +22,11 @@ describe("Timeline", () => {
     cy.get(".posts").should("contain", "Hello, world!");
     cy.get("#datestamp").invoke('text').should("match", /Created at \d{2}:\d{2} on \d{1,2} \w{3,} \d{4}/);
 
+    // Checks that empty posts won't be added
+    cy.visit("/posts");
+    cy.get("#new-post-form").submit();
+    cy.get(".posts").should("not.contain", "");
+
     // checks if posts are in order of newest first
     cy.visit("/posts");
 
