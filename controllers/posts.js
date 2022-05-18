@@ -21,6 +21,7 @@ const PostsController = {
       message: req.body.message,
       createdAt: req.body.createdAt,
       user: req.session.user._id,
+      comments: req.session.comments
     };
     const post = new Post(Info);
     post.save((err) => {

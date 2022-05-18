@@ -27,52 +27,19 @@
     </li>
     <li>
       <a class="btn" href="#"><i class="fa fa-user-circle-o"></i>{{this.user.username}}</a></li>
-    <li>
-      <a class="btn" href="/">Home</a></li>
+    {{!-- <li> --}}
+      {{!-- <a class="btn" href="/">Home</a></li> --}}
      <form action="/sessions?_method=DELETE" method="POST">
      <li>
       <input type="submit" id="logout" value="Log Out" />
-      <a class="btn" href="/">Log Out</a></li>
+      {{!-- <a class="btn" href="/">Log Out</a></li> --}}
+      </li>
       </form> 
   </ul>
-
-
-  {{!-- <body>
-    <div class="header">
-      <a href="#"><div class="logo"></div></a>
-      <div class="search">
-        <input type="text" id="inputText" placeholder="Search Metaperverse">
-        <div class="search-icon">
-        <img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Search-icon.png" ></img>
-        </div>
-      </div>
-      <div class="right-side">
-        <div class="leftofright">
-          <ul class="facebook" role="navigation">
-        <li>
-        <a class="btn" href="#"><i class="fa fa-user-circle-o"></i>{{this.user.username}}</a>
-        </li>
-        <li>
-      <a class="btn" href="/posts">Home</a>
-    </li>
-    <li>
-      <a class="btn" href="/">Log Out</a></li>
-  </ul> --}}
-{{!--       
-        </div>
-        <div class="rightofright">
-          <div class="right-icon fr"></div>
-          <div class="right-icon messages"></div>
-          <div class="right-icon notification"></div>
-          <p>|</p>
-          <div class=" right-icon privacy"></div>             <div class=" right-icon down"></div>
-        </div>  
-      </div>
-    </div>
-  </body> --}}
    
-   <center><h1>Your Metaperverse Timeline</h1></center>
-  <div class="center-element">
+   <center><h1>Zark Muckerberg? Never heard of her...
+   </h1></center>
+  <div class="post-center-element">
     <div class="fb-p-card">
     <div class="fb-p-card-header">
       <div class="fb-p-card-header-content" style="flex-grow: 2;">
@@ -91,7 +58,6 @@
 </div>
 <ul class="posts">
     {{#each posts}}
-
     <div class="center-element">
     <div class="fb-p-card">
         <div class="fb-p-card-header">
@@ -116,7 +82,7 @@
             <div class="fb-p-card-actions-stats">
                 <div class="like-counts">
                   <span id="likes-count-{{this.id}}">{{this.likes}}</span> Likes
-                    <span class="c-black-msg stat" style="padding-left: 10px;">3 comments</span>
+                    <span class="c-black-msg stat" style="padding-left: 10px;">{{this.comments.length}} comments</span>
                 </div>
             </div>
             <div class="fb-p-card-actions-action-btns">
@@ -132,46 +98,39 @@
                     <span class="stat">Share</span>
                 </div>
             </div>
-            <div class="fb-p-card-actions-prev-comments">
-                <a href="#" class="c-black-msg stat">View previous comments</a>
-            </div>
-            <div class="fb-p-card-actions-comments flex-start gapper">
-                <img class="rounded" src="https://scontent.fbom16-1.fna.fbcdn.net/v/t1.0-1/cp0/p32x32/136183373_230921388603403_7994896860376298304_o.jpg?_nc_cat=103&ccb=2&_nc_sid=7206a8&_nc_ohc=WfujENC1jnkAX9xPgIg&_nc_ht=scontent.fbom16-1.fna&tp=27&oh=45715b6e31422c10216f6531d147bbc4&oe=6033C4EE" alt="">
-                <div >
-                    <div class="commented">
-                    {{#each this.comments}}
-                        <div class="commented-name stat c-black c-black-msg">James Little</div>
-                        <div class="commented-txt c-black stat">{{this}}</div>                        
-                    </div>
-                    {{/each}}
-                  
-      <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
-        <label for="new-comment-form">Comment:</label>
-        <input type="text" name="commentText"> 
+        
+                    <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
+        {{!-- <label for="new-comment-form">Comment:</label> --}}
+        <input type="text" class="card-input" name="commentText" placeholder="Write a comment"> 
         <input type="submit" value="submit">
       </form>
-      </li>
-
-    {{/each}}
-                    <div class="commented-action">
-                        <a href="#">Like</a> 
-                        <span> · </span> 
-                        <a href="#">Reply</a> 
-                        <span> · </span> 
-                        <a href="#">Share</a> 
-                        <span> · </span> 
-                        <a href="#">19 h</a>
-                    </div>                    
+      <div class="comment-section">
+            {{!-- <div class="fb-p-card-actions-prev-comments">
+            </div> --}}
+            <div class="fb-p-card-actions-comments flex-start gapper">
+                <div>
+                  {{#each this.comments}}
+                    
+                        {{!-- <a class="c-small" href="#">James Little</a> --}}
+                        <div class="commented">
+                        <div class="commented-txt c-black stat">{{this}}</div>   
+                        </div>                  
+                    <br>
+                    {{!-- <div class="fb-p-card-actions-comment-action"></div> --}}
+                    {{/each}}
+                    
+                </div>
+                </div>
                 </div>
             </div>
-            <div class="fb-p-card-actions-comment-action"></div>
+            
         </div>
     </div>
     </div>
-    <br>
-    <br>
-    <br>
-      {{/each}}
+      
   </ul>
+  {{/each}}
   </body>
   </HTML>
+
+   
