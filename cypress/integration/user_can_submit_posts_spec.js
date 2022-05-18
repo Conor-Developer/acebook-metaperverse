@@ -25,7 +25,7 @@ describe("Timeline", () => {
     // Checks that empty posts won't be added
     cy.visit("/posts");
     cy.get("#new-post-form").submit();
-    cy.get(".posts").should("not.contain", "");
+    cy.contains("Invalid Message: Empty");
 
     // checks if posts are in order of newest first
     cy.visit("/posts");
