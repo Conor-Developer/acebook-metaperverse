@@ -19,18 +19,16 @@
       </a>
     </li>  
     <li class="acebook__search"><form>
-      <input placeholder="Search the Metaperverse"/>
+      <input placeholder="Search the Metaperverse..."/>
       <a class="btn fa-btn" href="#">
         <i class="fa fa-search"></i>
       </a>
       </form>
     </li>
     <li>
-      <a class="btn" href="#"><i class="fa fa-user-circle-o"></i>{{this.user.username}}</a></li>
-    {{!-- <li> --}}
-      {{!-- <a class="btn" href="/">Home</a></li> --}}
+      <form><a class="btn" href="#"><i class="fa fa-user-circle-o"></i>{{this.user.username}}</a></form></li>
+      <li>
      <form action="/sessions?_method=DELETE" method="POST">
-     <li>
       <input type="submit" id="logout" value="Log Out" />
       {{!-- <a class="btn" href="/">Log Out</a></li> --}}
       </li>
@@ -39,6 +37,8 @@
    
    <center><h1>Zark Muckerberg? Never heard of her...
    </h1></center>
+   <br>
+   <br>
   <div class="post-center-element">
     <div class="fb-p-card">
     <div class="fb-p-card-header">
@@ -82,29 +82,26 @@
             <div class="fb-p-card-actions-stats">
                 <div class="like-counts">
                   <span id="likes-count-{{this.id}}">{{this.likes}}</span> Likes
-                    <span class="c-black-msg stat" style="padding-left: 10px;">{{this.comments.length}} comments</span>
+                    <span class="c-black-msg stat" style="padding-left: 10px;">{{this.comments.length}} Comments</span>
                 </div>
             </div>
             <div class="fb-p-card-actions-action-btns">
                 <div> 
-                    <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button><div class="fb-like-ico fb-icon-bundle stat"></div>
-                </div>
+                    <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button><div class="fb-like-ico fb-icon-bundle stat"></div>                </div>
                 <div>
                     <div class="fb-comment-ico fb-icon-bundle stat"></div>
                     <span class="stat">Comment</span>
                 </div>
                 <div>
-                    <div class="fb-share-ico fb-icon-bundle"></div>
-                    <span class="stat">Share</span>
+                    <div>
+                      <div class="fb-comment-ico fb-icon-bundle stat"></div>
+         <form id="delete-button" action="/posts/{{this.id}}?_method=DELETE" method="post">
+        <input type="submit" value="Delete">
+      </form>
+      </div>
                 </div>
             </div>
         
-                    <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
-        {{!-- <label for="new-comment-form">Comment:</label> --}}
-        <input type="text" class="card-input" name="commentText" placeholder="Write a comment"> 
-        <input type="submit" value="submit">
-      </form>
-      
       <div class="comment-section">
             {{!-- <div class="fb-p-card-actions-prev-comments">
             </div> --}}
@@ -123,20 +120,17 @@
                 </div>
                 </div>
                 </div>
+                 <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
+        <input type="text" class="card-input" name="commentText" placeholder="Write a comment"> 
+        <input type="submit" id="submitComment" value="submit">
+      </form>
             </div>
-            
         </div>
     </div>
     </div>
       
 
       </li>
-
-      
-  <form id="delete-button" action="/posts/{{this.id}}?_method=DELETE" method="post">
-        <input type="submit" value="Delete"/>
-      </form>
-
   </ul>
   {{/each}}
 
