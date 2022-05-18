@@ -33,6 +33,7 @@ describe("Timeline", () => {
     cy.get("#submitPost").click();
 
     cy.contains("Hello, world3!");
+    cy.contains("Hello, world2!");
     cy.contains("Hello, world1!");
   });
 });
