@@ -25,6 +25,7 @@ class LikesView {
       btn.addEventListener("click", (event) => {
         const postId = event.target.className;
         const action = event.target.textContent.trim();
+        console.log(action);
         console.log(event.target);
         toggleButtonText[action](event.target);
         updateLikeStats[action](postId);

@@ -19,9 +19,10 @@
 
   <h1>Timeline</h1>
 
-  {{!-- action="/posts" method="post" --}}
 
-  <form id="new-post-form" >
+{{!-- action="/posts" method="post" --}}
+
+  <form id="new-post-form">
   <textarea
     id="message"
     name="message"
@@ -30,8 +31,9 @@
     type="text"
     placeholder="Type your post here..."
   ></textarea><br>
-  <input type="submit" value="Submit" />
+  <button type="button" name="test">Submit</button>
 </form>
+<br>
 
   <ul class="posts">
     {{#each posts}}
@@ -54,6 +56,8 @@
 
     {{/each}}
   </ul>
+
+  <br>
 
   <form action="/sessions?_method=DELETE" method="POST">
     <input type="submit" id="logout" value="Log Out" />
