@@ -46,6 +46,19 @@ const PostsController = {
       }
     );
   },
+  Delete: (req, res) => {
+    console.log("hi")
+    Post.findByIdAndRemove( 
+      { _id: req.params.id },
+      (err) => {
+        if (err) {
+          throw err;
+        }
+        res.redirect("/posts");
+      }
+    );
+  },
 };
+
 
 module.exports = PostsController;
