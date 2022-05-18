@@ -17,10 +17,14 @@ const PostsController = {
       });
   },
   Create: (req, res) => {
+    let postMessage = req.body.message;
+
+    console.log(postMessage);
+
     const Info = {
-      message: req.body.message,
-      createdAt: req.body.createdAt,
-      user: req.session.user._id,
+      message: postMessage,
+      createdAt: "2022-05-18T13:31:59.581+00:00",
+      user: "627bc2095a4c27db0fa67ea9",
     };
     const post = new Post(Info);
     post.save((err) => {

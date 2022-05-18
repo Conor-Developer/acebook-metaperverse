@@ -1,7 +1,7 @@
 class postsView {
   constructor() {
     document.querySelectorAll("[type=button]").forEach((submit) => {
-      submit.addEventListener("click", (event) => {
+      submit.addEventListener("click", () => {
         const inputEl = document.querySelector("#message");
 
         const mainPostEl = document.querySelector(".posts");
@@ -38,7 +38,13 @@ class postsView {
 
         mainPostEl.prepend(newPostEl);
 
-        // axios.post("/", { post: newPost });
+        // eslint-disable-next-line no-use-before-define
+        /*eslint-disable */
+
+        //suppress all warnings between comments
+        axios.post("/posts", { message: inputEl.value });
+
+        /*eslint-enable */
       });
     });
   }
