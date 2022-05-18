@@ -26,14 +26,13 @@ describe("Timeline", () => {
     cy.visit("/posts");
 
     cy.get("#new-post-form").find('[type="text"]').type("Hello, world1!");
-    cy.get("#new-post-form").submit();
+    cy.get("#submitPost").click();
     cy.get("#new-post-form").find('[type="text"]').type("Hello, world2!");
-    cy.get("#new-post-form").submit();
+    cy.get("#submitPost").click();
     cy.get("#new-post-form").find('[type="text"]').type("Hello, world3!");
-    cy.get("#new-post-form").submit();
+    cy.get("#submitPost").click();
 
-    cy.get(".posts").should("contain", "Hello, world3!");
-    cy.get(".posts").should("contain", "Hello, world2!");
-    cy.get(".posts").should("contain", "Hello, world1!");
+    cy.contains("Hello, world3!");
+    cy.contains("Hello, world1!");
   });
 });
