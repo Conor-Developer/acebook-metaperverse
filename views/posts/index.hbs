@@ -1,60 +1,147 @@
 <HTML>
-  <script
-    type="text/javascript"
-    src="./javascripts/likesView.js"
-    defer
-  ></script>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript" src="./javascripts/likesView.js" defer></script>
   <link rel="stylesheet" href="/stylesheets/posts_style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
 
-  <form action="/" method="GET">
-    <input type="submit" value="Home" />
-  </form>
 
-  <h1>Timeline</h1>
-
-  <form id="new-post-form" action="/posts" method="post">
-  <textarea
-    id="message"
-    name="message"
-    value=""
-    rows="2"
-    type="text"
-    placeholder="Type your post here..."
-  ></textarea><br>
-  <input type="submit" value="Submit" />
-</form>
-
-  <ul class="posts">
+  <ul class="acebook" role="navigation">
+    <li class="acebook__brand">
+      <a class="btn" href="#">
+        <i class="fa fa-acebook-official"></i>
+      </a>
+    </li>  
+    <li class="acebook__search"><form>
+      <input placeholder="Search the Metaperverse"/>
+      <a class="btn fa-btn" href="#">
+        <i class="fa fa-search"></i>
+      </a>
+      </form>
+    </li>
+    <li>
+      <a class="btn" href="#"><i class="fa fa-user-circle-o"></i>{{this.user.username}}</a></li>
+    {{!-- <li> --}}
+      {{!-- <a class="btn" href="/">Home</a></li> --}}
+     <form action="/sessions?_method=DELETE" method="POST">
+     <li>
+      <input type="submit" id="logout" value="Log Out" />
+      {{!-- <a class="btn" href="/">Log Out</a></li> --}}
+      </li>
+      </form> 
+  </ul>
+   
+   <center><h1>Zark Muckerberg? Never heard of her...
+   </h1></center>
+  <div class="post-center-element">
+    <div class="fb-p-card">
+    <div class="fb-p-card-header">
+      <div class="fb-p-card-header-content" style="flex-grow: 2;">
+    <div class="lineSplit"></div>
+    <div class="rounded-3c"></div>
+    <form id="new-post-form" action="/posts" method="post">
+    <div class="fb-p-card-content">
+    <textarea class="message" name="message" type="text" id="message" placeholder="What's on your mind, {{this.user.username}}?"></textarea>
+    <input type="submit" class="postButton" id="submitPost" value="Post"/>
+    </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<ul class="posts">
     {{#each posts}}
-    <p>{{this.user.username}}</p>
-      <p class="post-message">{{this.message}}</p>
-      <div id="datestamp">Created at {{formatDate this.createdAt}}</div>
-      <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button>
-      <span id="likes-count-{{this.id}}">{{this.likes}}</span>   
-
-    {{#each this.comments}}
-    <p>{{this}}</p>
-     {{/each}}
-
-      <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
-        <label for="new-comment-form">Comment:</label>
-        <input type="text" name="commentText"> 
+    <div class="center-element">
+    <div class="fb-p-card">
+        <div class="fb-p-card-header">
+            <div class="fb-p-card-header-content" style="flex-grow: 2;">
+                <div> 
+                    <a class="c-black" href="#">{{this.user.username}}</a>    
+                </div>   
+                <div id="datestamp">Created at {{formatDate this.createdAt}}</div>
+            </div>
+            <div>
+                <div class="rounded-3c">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="fb-p-card-content">
+            <p>{{this.message}}</p>
+        </div>
+        <div class="fb-p-card-actions">
+            <div class="fb-p-card-actions-stats">
+                <div class="like-counts">
+                  <span id="likes-count-{{this.id}}">{{this.likes}}</span> Likes
+                    <span class="c-black-msg stat" style="padding-left: 10px;">{{this.comments.length}} comments</span>
+                </div>
+            </div>
+            <div class="fb-p-card-actions-action-btns">
+                <div> 
+                    <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button><div class="fb-like-ico fb-icon-bundle stat"></div>
+                </div>
+                <div>
+                    <div class="fb-comment-ico fb-icon-bundle stat"></div>
+                    <span class="stat">Comment</span>
+                </div>
+                <div>
+                    <div class="fb-share-ico fb-icon-bundle"></div>
+                    <span class="stat">Share</span>
+                </div>
+            </div>
+        
+                    <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
+        {{!-- <label for="new-comment-form">Comment:</label> --}}
+        <input type="text" class="card-input" name="commentText" placeholder="Write a comment"> 
         <input type="submit" value="submit">
       </form>
+      
+      <div class="comment-section">
+            {{!-- <div class="fb-p-card-actions-prev-comments">
+            </div> --}}
+            <div class="fb-p-card-actions-comments flex-start gapper">
+                <div>
+                  {{#each this.comments}}
+                    
+                        {{!-- <a class="c-small" href="#">James Little</a> --}}
+                        <div class="commented">
+                        <div class="commented-txt c-black stat">{{this}}</div>   
+                        </div>                  
+                    <br>
+                    {{!-- <div class="fb-p-card-actions-comment-action"></div> --}}
+                    {{/each}}
+                    
+                </div>
+                </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+      
+
       </li>
 
-      <form id="delete-button" action="/posts/{{this.id}}?_method=DELETE" method="post">
+      
+  <form id="delete-button" action="/posts/{{this.id}}?_method=DELETE" method="post">
         <input type="submit" value="Delete"/>
       </form>
 
-    {{/each}}
   </ul>
-
-  <form action="/sessions?_method=DELETE" method="POST">
-    <input type="submit" id="logout" value="Log Out" />
-  </form>
+  {{/each}}
 
 
+  </body>
+  </HTML>
 
-
+   
