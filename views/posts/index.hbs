@@ -34,7 +34,7 @@
       <span id="likes-count-{{this.id}}">{{this.likes}}</span>   
 
     {{#each this.comments}}
-    <p>{{this}}</p>
+    <p class="comments">{{this}}</p>
      {{/each}}
 
       <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>

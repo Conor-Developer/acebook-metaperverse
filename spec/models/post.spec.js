@@ -15,6 +15,11 @@ describe("Post model", () => {
     expect(post.message).toEqual("some message");
   });
 
+  it("has a comments array", () => {
+    var post = new Post({ message: "some message" });
+    expect(post.comments.toObject()).toEqual([])
+  })
+
   it("post pulls & shows userID", (done) => {
     var post = new Post({ user: '628379ad7a145372ff227f25', message: "some message" });
 
@@ -87,4 +92,5 @@ describe("Post model", () => {
       });
     });
   });
+
 });
