@@ -104,6 +104,7 @@
         <input type="text" class="card-input" name="commentText" placeholder="Write a comment"> 
         <input type="submit" value="submit">
       </form>
+      
       <div class="comment-section">
             {{!-- <div class="fb-p-card-actions-prev-comments">
             </div> --}}
@@ -128,6 +129,15 @@
     </div>
     </div>
       
+
+      </li>
+
+      <form id="delete-button" action="/posts/{{this.id}}?_method=DELETE" method="post">
+        <input type="submit" value="Delete"/>
+      </form>
+
+    {{/each}}
+
   </ul>
   {{/each}}
   </body>
