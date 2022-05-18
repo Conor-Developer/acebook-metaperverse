@@ -64,6 +64,8 @@ body {
   color: rgb(0, 0, 0);
   font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
+  text-align:center
 }
 
 .c-black-msg {
@@ -76,11 +78,6 @@ body {
  text-decoration: none;
  font-size: 15px;
 }
-
-.c-black-msg:hover {
-  text-decoration: underline;
-}
-
 
 .rounded-3c, .rounded {
   width: 36px;
@@ -182,15 +179,15 @@ body {
   justify-content: center;
   gap: 6px;
   width: 33%;
-  padding: 8px;
+  padding: -10px;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 
-.fb-p-card-actions-action-btns > div:hover {
+/* .fb-p-card-actions-action-btns > div:hover {
   background: #DADDE1;
-}
+} */
 
 .commented {
   background-color: rgb(240, 242, 245);
@@ -247,7 +244,7 @@ body {
 div.lineSplit{
   width:320px;
   height: 1px;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-left: 5px;
   background: #dcdee3;
 }
@@ -282,7 +279,7 @@ div.lineSplit:before {
   border: none;
   font-size: 14px;
   padding-top: 0px;
-  padding-left: 85px;
+  padding-left: 5px;
   padding-right: 30px;
   border-bottom: 1px solid #dcdee3;
 }
@@ -300,7 +297,7 @@ div.lineSplit:before {
   font-size: 13px;
   font-weight: 500;
   border-radius: 3px;
-  margin: -35px 50px 0 0;
+  margin: -50px;
   background-color: #4e69a2;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
@@ -454,9 +451,6 @@ p {
   top: -8px;
 }
 
-.small-screen {
-  opacity: 0;
-}
 .btn {
   text-decoration: none;
   color: #fff;
@@ -475,7 +469,7 @@ input:focus {
 }
 .fa-btn {
   padding: .125vh 1.2vh;
-  margin-left: -1vh;
+  margin-left: 0vh;
   background: #eee;
 }
 .fa-btn:hover {
@@ -495,7 +489,7 @@ input:focus {
   border: 1px solid red;
   height: 46px;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 20px;
   border: 1px solid rgba(238, 238, 238, 1);
   border-radius: 5px;
   background: rgba(59, 89, 153, 1);
@@ -503,12 +497,8 @@ input:focus {
   font-size: 0.9em;
   box-shadow: 5px 10px 20px -20px rgba(59, 89, 153, 1);
 }
-
-.acebook__brand i {
-  font-size: 1.5em;
-}
 .acebook li:not(:last-child):not(:first-child):not(.acebook__search) {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 ul {
   padding: 0;
@@ -524,7 +514,7 @@ ul {
   width: 95%;
   margin-left: 3px;
 }
-.commentButton {
+/* .commentButton {
   width: 60px;
   height: 20px;
   border: none;
@@ -534,26 +524,105 @@ ul {
   cursor: pointer;
   font-size: 13px;
   font-weight: 500;
-  border-radius: 3px;
+  border-radius: 20px;
   margin: 0px 0px px 0;
   background-color: #4e69a2;
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-}
+} */
 
 
 .comment-section{
-  max-height: 16vh;
-  max-width: 500%;
+  max-height: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+  /* max-width: 500%; */
   background-color: #ffffff;
   overflow-y:scroll;
 }
 .comment-section::-webkit-scrollbar{
   display: none;
 }
-/* .comment{
-  height: 10%;
-  padding: 2%;
-  margin: 2%;
-  background-color: #ffff;
-  color: black;
-} */
+#logout {
+  color: rgb(255, 255, 255);
+}
+#like-button {
+  text-align:center;
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  cursor: pointer;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-weight: 500;
+}
+#submitPost {
+  width: 65px;
+  height: 30px;
+  border: none;
+  float: right;
+  color: #FFFFFF;
+  display: block;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 3px;
+  margin: -35px 50px 0 0;
+  background-color: #4e69a2 !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+#submitPost:hover,.postButton:visited{
+  outline: none;
+}
+#submitPost:visited{
+  outline: none;
+  box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+}
+#submitPost:active{
+  background-color: #3B5998;
+  border-color: #2f477a #314a7f #334c83; 
+  box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+}
+#submitComment {
+  width: 65px;
+  height: 30px;
+  border: none;
+  float: right;
+  color: #FFFFFF;
+  display: block;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 3px;
+  margin: auto;
+  background-color: #4e69a2 !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+#submitComment:hover,.postButton:visited{
+  outline: none;
+}
+#submitComment:visited{
+  outline: none;
+  box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+}
+#submitComment:active{
+  background-color: #3B5998;
+  border-color: #2f477a #314a7f #334c83; 
+  box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+}
+
+input[type=submit] {
+  text-align:center;
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  cursor: pointer;
+  /*optional*/
+  font-family: Helvetica, Arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-weight: 500;
+}
