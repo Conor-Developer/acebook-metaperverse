@@ -37,9 +37,9 @@
 
   <ul class="posts">
     {{#each posts}}
-    <p>{{this.user.username}}</p>
+    <p id="user" class="{{this.user.id}}">{{this.user.username}}</p>
       <p class="post-message">{{this.message}}</p>
-      <div id="datestamp">Created at {{formatDate this.createdAt}}</div>
+      <div id="datestamp">Created on {{formatDate this.createdAt}}</div>
       <button id="like-button" class="{{this.id}}" type="submit" value="Like">Like</button>
       <span id="likes-count-{{this.id}}">{{this.likes}}</span>   
 
