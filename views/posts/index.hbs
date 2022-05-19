@@ -35,7 +35,7 @@
       </form> 
   </ul>
    
-   <center><h1>Zark Muckerberg? Never heard of her...
+   <center><h1>Welcome to the Metaperverse {{this.user.username}}...
    </h1></center>
    <br>
    <br>
@@ -57,6 +57,7 @@
 </div>
 </div>
 </div>
+<br>
 <ul class="posts">
     {{#each posts}}
     <div class="center-element">
@@ -103,11 +104,18 @@
                 </div>
             </div>
         
-      <div class="comment-section">
+      
             {{!-- <div class="fb-p-card-actions-prev-comments">
             </div> --}}
-            <div class="fb-p-card-actions-comments flex-start gapper">
-                <div>
+            
+                
+                   <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
+        <input type="text" class="card-input" name="commentText" placeholder="Write a comment"> 
+        <input type="submit" id="submitComment" value="submit">
+      </form>
+      <div class="comment-section">
+        <div class="fb-p-card-actions-comments flex-start gapper">
+          <div>
                   {{#each this.comments}}
                     
                         {{!-- <a class="c-small" href="#">James Little</a> --}}
@@ -121,10 +129,7 @@
                 </div>
                 </div>
                 </div>
-                 <form id="new-comment-form" action= '/comments/{{this.id}}' method='post'>
-        <input type="text" class="card-input" name="commentText" placeholder="Write a comment"> 
-        <input type="submit" id="submitComment" value="submit">
-      </form>
+       
             </div>
         </div>
     </div>
