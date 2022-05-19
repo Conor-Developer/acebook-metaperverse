@@ -148,4 +148,4 @@ If you have issues that are not resolved by these tips, please reach out to a co
 
 ### Licence
 
-[See here]('/LICENSE')
+[See here](LICENSE)
