@@ -92,5 +92,11 @@ hbs.registerHelper('formatDate', function(datestamp) {
     moment(datestamp).format("HH:mm") + ' on ' + moment(datestamp).format("DD MMMM YYYY")
   )
 });
+hbs.registerHelper("ifEq", function (a, b, options) {
+  if (a == b) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
 
 module.exports = app;

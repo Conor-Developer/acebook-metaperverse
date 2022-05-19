@@ -30,12 +30,11 @@
       <li>
      <form action="/sessions?_method=DELETE" method="POST">
       <input type="submit" id="logout" value="Log Out" />
-      {{!-- <a class="btn" href="/">Log Out</a></li> --}}
       </li>
       </form> 
   </ul>
-   
-   <center><h1>Welcome to the Metaperverse {{this.user.username}}...
+
+   <center><h1>Welcome to the Metaperverse {{currentUser}}...
    </h1></center>
    <br>
    <br>
@@ -96,10 +95,12 @@
                 </div>
                 <div>
                     <div>
+                      {{#ifEq this.user._id ../session.user._id}}
                       <div class="fb-comment-ico fb-icon-bundle stat"></div>
          <form id="delete-button" action="/posts/{{this.id}}?_method=DELETE" method="post">
         <input type="submit" value="Delete">
       </form>
+       {{/ifEq}}
       </div>
                 </div>
             </div>
