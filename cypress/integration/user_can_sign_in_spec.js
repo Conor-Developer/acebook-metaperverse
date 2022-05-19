@@ -38,16 +38,16 @@ describe("Authentication", () => {
    cy.visit("/");
    cy.get("#Signup").click();
    cy.url().should("include", "/users/new");
-   cy.get("#username").type("someone34");
-   cy.get("#email").type("someone34@example.com");
+   cy.get("#username").type("someone38");
+   cy.get("#email").type("someone38@example.com");
    cy.get("#password").type("password");
    cy.get("#submit").click();
 
    cy.visit("/");
    cy.get("#Signup").click();
    cy.url().should("include", "/users/new");
-   cy.get("#username").type("someone34");
-   cy.get("#email").type("someone34@example.com");
+   cy.get("#username").type("someone38");
+   cy.get("#email").type("someone38@example.com");
    cy.get("#password").type("password");
    cy.get("#submit").click();
    cy.contains("Email/Username in use")
