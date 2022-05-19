@@ -5,13 +5,13 @@ const PostsController = {
     Post.find({})
       .populate({ path: "user", select: "username" })
       .sort({ _id: -1 })
-      .exec(function (err, userposts) {
+      .exec(function (err, post) {
         if (err) {
           throw err;
         }
 
         res.render("posts/index", {
-          posts: userposts,
+          posts: post,
           user: req.session.user,
         });
       });
@@ -23,6 +23,7 @@ const PostsController = {
       user: req.session.user._id,
       comments: req.session.comments
     };
+    Info.user = req.session.user._id
     const post = new Post(Info);
     post.save((err) => {
       if (err) {
@@ -48,14 +49,14 @@ const PostsController = {
     );
   },
   Delete: (req, res) => {
-    console.log("hi")
-    Post.findByIdAndRemove( 
-      { _id: req.params.id },
-      (err) => {
-        if (err) {
-          throw err;
+    Post.findByIdAndRemove(req.params.id,
+      function(err, word) {
+        (err) => {
+          if (err) {
+            throw err;
+          }
+          res.redirect("/posts");
         }
-        res.redirect("/posts");
       }
     );
   },

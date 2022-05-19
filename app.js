@@ -92,5 +92,11 @@ hbs.registerHelper('formatDate', function(datestamp) {
     moment(datestamp).format("HH:mm") + ' on ' + moment(datestamp).format("DD MMMM YYYY")
   )
 });
+hbs.registerHelper('ifEqual', function(userId, postId) {
+  if (userId === postId) {
+    return true
+  } 
+  return false
+})
 
 module.exports = app;

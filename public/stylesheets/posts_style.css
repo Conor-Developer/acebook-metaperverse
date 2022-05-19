@@ -9,9 +9,9 @@ body {
 }
 .center-element {
   display: flex;
-  align-items: overflow;
+  /* align-items: center; */
   justify-content: center;
-  height: 48vh;
+  height: 55vh;
 }
 .post-center-element {
   display: flex;
@@ -273,7 +273,6 @@ div.lineSplit:before {
     margin-left: 20px;
 }
 .message{
-  height: 50px;
   width: 320px;
   resize: none;
   border: none;
@@ -532,10 +531,10 @@ ul {
 
 
 .comment-section{
-  max-height: 15vh;
+  max-height: 12vh;
   display: flex;
   flex-wrap: wrap;
-  /* max-width: 500%; */
+  max-width: 500%;
   background-color: #ffffff;
   overflow-y:scroll;
 }

@@ -2,7 +2,7 @@ const User = require("../models/user");
 
 const UsersController = {
   New: (req, res) => {
-    res.render("users/new", { error: req.flash("error") });
+    res.render("users/new", { user: req.session.user, error: req.flash("error") });
   },
 
   Create: (req, res) => {
@@ -21,6 +21,7 @@ const UsersController = {
           throw err;
         }
       } else {
+        req.session.user = user;
         res.status(201).redirect("/posts");
       }
     });

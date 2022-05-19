@@ -19,12 +19,13 @@ const SessionsController = {
     
     validateEmail(email).then((result) => {
       if (result) {
-        User.findOne({ email: email }).then((user) => {
-          bcrypt.compare(password, user.password, function (err, isMatch) {
+        User.findOne({ email: email }).then((current) => {
+          bcrypt.compare(password, current.password, function (err, isMatch) {
             if (err) throw err;
 
             if (isMatch) {
-              req.session.user = user;
+              req.session.user = current
+              res.render("/posts/index", { current: current })
               res.redirect("/posts");
             } else {
               req.flash("message", "Invalid Credentials");

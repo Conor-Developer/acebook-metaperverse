@@ -42,7 +42,7 @@
   <div class="post-center-element">
     <div class="fb-p-card">
     <div class="fb-p-card-header">
-      <div class="fb-p-card-header-content" style="flex-grow: 2;">
+      <div class="fb-p-card-header-content">
     <div class="lineSplit"></div>
     <div class="rounded-3c"></div>
     <form id="new-post-form" action="/posts" method="post">
@@ -56,6 +56,7 @@
 </div>
 </div>
 </div>
+<br>
 <ul class="posts">
     {{#each posts}}
     <div class="center-element">
@@ -95,9 +96,13 @@
                 <div>
                     <div>
                       <div class="fb-comment-ico fb-icon-bundle stat"></div>
+                      {{!-- {{#if (ifEqual this.user.username user.username )}} --}}
          <form id="delete-button" action="/posts/{{this.id}}?_method=DELETE" method="post">
         <input type="submit" value="Delete">
       </form>
+      {{!-- {{else}} --}}
+      {{!-- <span class="stat">Share</span> --}}
+      {{!-- {{/if}} --}}
       </div>
                 </div>
             </div>
