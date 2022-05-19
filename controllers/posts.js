@@ -49,14 +49,14 @@ const PostsController = {
     );
   },
   Delete: (req, res) => {
-    Post.findByIdAndRemove(req.params.id,
-      function(err, word) {
-        (err) => {
-          if (err) {
-            throw err;
-          }
-          res.redirect("/posts");
+    console.log("hi")
+    Post.findByIdAndRemove( 
+      { _id: req.params.id },
+      (err) => {
+        if (err) {
+          throw err;
         }
+        res.redirect("/posts");
       }
     );
   },
