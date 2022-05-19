@@ -29,7 +29,7 @@ describe("Authentication", () => {
     cy.get("#password").type("password");
     cy.get("#submit").click();
     cy.url().should("include", "/posts");
-    cy.contains("Zark Muckerberg");
+    cy.contains("Welcome");
 
 
   }); 
@@ -38,16 +38,16 @@ describe("Authentication", () => {
    cy.visit("/");
    cy.get("#Signup").click();
    cy.url().should("include", "/users/new");
-   cy.get("#username").type("someone34");
-   cy.get("#email").type("someone34@example.com");
+   cy.get("#username").type("someone345");
+   cy.get("#email").type("someone345@example.com");
    cy.get("#password").type("password");
    cy.get("#submit").click();
 
    cy.visit("/");
    cy.get("#Signup").click();
    cy.url().should("include", "/users/new");
-   cy.get("#username").type("someone34");
-   cy.get("#email").type("someone34@example.com");
+   cy.get("#username").type("someone345");
+   cy.get("#email").type("someone345@example.com");
    cy.get("#password").type("password");
    cy.get("#submit").click();
    cy.contains("Email/Username in use")

@@ -3,15 +3,16 @@
   font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
 }
 
+@media (min-width: 800px){
 body {
   margin: 0;
   background: #F2F3F5;
 }
 .center-element {
   display: flex;
-  align-items: overflow;
+  /* align-items: overflow; */
   justify-content: center;
-  height: 48vh;
+  height: 60vh;
 }
 .post-center-element {
   display: flex;
@@ -532,7 +533,7 @@ ul {
 
 
 .comment-section{
-  max-height: 15vh;
+  max-height: 12vh;
   display: flex;
   flex-wrap: wrap;
   /* max-width: 500%; */
@@ -625,4 +626,5 @@ input[type=submit] {
   color: rgb(0, 0, 0);
   font-size: 15px;
   font-weight: 500;
+}
 }
